@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Mark
+{% endblock %}
+
+{% block cssfile %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mark.css') }}">
+{% endblock %}
+
+
+
+{% block content %}
+	<script 
+        src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+	<script type="text/javascript" src="{{ url_for('static', filename='functions.js') }}"></script>
+	<div class="container">
+	    {% if student_marks_result %}
+	    	<p class="content">Here are your marks</p>
+			<br>
+	    	<p class="content1">Assignment1: {{ student_marks_result[0][2] }}</p>
+	    	<p class="content1">Assignment2: {{ student_marks_result[0][3] }}</p>
+	    	<p class="content1">Lab1: {{ student_marks_result[0][4] }}</p>
+	    	<p class="content1">Lab2: {{ student_marks_result[0][5] }}</p>
+	    	<p class="content1">Midterm: {{ student_marks_result[0][6] }}</p>
+	    	<p class="content1">Final: {{ student_marks_result[0][7] }}</p>
+
+	    	<p class="content1"><a href="#" class="see_requests" onclick="display('student_request')"> Click here to request a remark. </a></p>
+			<div id="student_request">
+				<form action="{{ url_for('request_remark') }}" method="POST">
+					<div class="box">
+						<select name="which">
+							<option value="assignment1">Assignment1</option>
+							<option value="assignment2">Assignment2</option>
+							<option value="lab1">Lab1</option>
+							<option value="lab2">Lab2</option>
+							<option value="midterm">Midterm</option>
+							<option value="final">Final</option>
+						</select>
+						<br>
+						<textarea rows="4" cols="50" name="reason" placeholder="State your reasons"></textarea>
+						<br>
+			        	<input type="submit" name="submit" value="submit" class="submit_but" onclick="request_success();">
+					</div>
+		    	</form>
+				<p class="content1"><a href="#" class="see_requests" onclick="hide('#student_request')"> Collapse </a></p>
+			</div>
+			
+			<p class="content1"><a href="#" class="see_requests" onclick="display('request_history')"> Click here to see my request history. </a></p>
+			<div id="request_history">
+				{% if remark_history_result %}
+					{% for i in remark_history_result %}
+						<p class="content1">For {{ i[2] }}: {{ i[3] }} (identifier: {{ i[5] }})</p>
+					{% endfor %}
+				{% endif %}
+				<p class="content1"><a href="#" class="see_requests" onclick="hide('#request_history')"> Collapse </a></p>
+			</div>
+			
+
+	    {% else %}
+		    <div class="title content">Here are the marks of your students</div>
+		    <table>
+		    	<tr>
+				    <th class="content1">Student ID</th>
+				    <th class="content1">Assignment1</th> 
+				    <th class="content1">Assignment2</th>
+				    <th class="content1">Lab1</th>
+				    <th class="content1">Lab2</th> 
+				    <th class="content1">Midterm</th>
+				    <th class="content1">Final</th>
+	  			</tr>
+	        {% for i in instructor_marks_result %}
+	  			<tr>
+				    <th class="content1">{{ i[0] }}</th>
+				    <th class="content1">{{ i[2] }}</th> 
+				    <th class="content1">{{ i[3] }}</th>
+				    <th class="content1">{{ i[4] }}</th>
+				    <th class="content1">{{ i[5] }}</th> 
+				    <th class="content1">{{ i[6] }}</th>
+				    <th class="content1">{{ i[7] }}</th>
+	  			</tr>
+	 		{% endfor %}
+			</table>
+
+			{% if num == 0 %}
+				<p class="content1">You have no new remark requests from students. </p>
+			{% else %}
+				<p class="content1"><a href="#" class="see_requests" onclick="display('new_requests')"> You have <span id="feedback_num">{{ num }}</span> new remark requests! Click here to see. </a></p>
+				<div id="new_requests">
+					{% if new_remark_requests_result %}
+						<table>
+					    	<tr>
+							    <th class="content1">Student ID</th>
+							    <th class="content1">Which</th> 
+							    <th class="content1">Reason</th>
+							    <th class="content1">Identifier</th>
+							    <th class="content1">Ignore</th>
+				  			</tr>
+				  		<form action="{{ url_for('mark_read') }}" method="POST">
+							{% for i in new_remark_requests_result %}
+								<tr>
+									<th class="content1">{{ i[0] }}</th>
+								    <th class="content1">{{ i[2] }}</th> 
+								    <th class="content1">{{ i[3] }}</th>
+								    <th class="content1">{{ i[5] }}</th>
+								    <th class="content1"><input type="submit" name="delete_remark" value="delete{{ i[5] }}"></th>
+								</tr>
+
+							{% endfor %}
+						</form>
+						</table>
+					{% endif %}
+					<br>
+					<p class="content1">If you decide to modify student's grade, please use the provided boxes.</p>
+					<form action="{{ url_for('change_mark') }}" method="POST">
+						<div class="sec_box">
+							<textarea name="student_id" placeholder="Student ID" id="first"></textarea>
+							<textarea name="new_score" placeholder="New Score" id="second"></textarea>
+							<textarea name="identifier" placeholder="Identifier" id="third"></textarea>	
+						</div>
+						<div class="sec_box">
+							<select name="which" id="fourth">
+								<option value="A1">Assignment1</option>
+								<option value="A2">Assignment2</option>
+								<option value="L1">Lab1</option>
+								<option value="L2">Lab2</option>
+								<option value="Midterm">Midterm</option>
+								<option value="Final">Final</option>
+							</select>
+				        	<input id="fifth" class="submit_but" type="submit" name="change_score" value="submit" onclick="change_success();">	
+						</div>
+						
+					</form>
+					<p class="content1"><a href="#" class="see_requests" onclick="hide('#new_requests')"> Collapse </a></p>
+				</div>
+			{% endif %}
+			
+			<hr>
+
+			<p class="content1"><a href="#" class="see_requests" onclick="display('all_requests')"> Click here to see all remark history! </a></p>
+			<div id="all_requests">
+				{% if all_remark_requests_result %}
+					<table>
+				    	<tr>
+						    <th class="content1">Student ID</th>
+						    <th class="content1">Which</th> 
+						    <th class="content1">Reason</th>
+						    <th class="content1">Identifier</th>
+			  			</tr>
+					{% for i in all_remark_requests_result %}
+						<tr>
+							<th class="content1">{{ i[0] }}</th>
+						    <th class="content1">{{ i[2] }}</th> 
+						    <th class="content1">{{ i[3] }}</th>
+						    <th class="content1">{{ i[5] }}</th>
+						</tr>
+					{% endfor %}
+					</table>
+				{% endif %}
+				<p class="content1"><a href="#" class="see_requests" onclick="hide('#all_requests')"> Collapse </a></p>
+			</div>
+	    {% endif %}
+    </div>
+{% endblock content %}
+
+

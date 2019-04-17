@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+{% block cssfile %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='syllabus.css') }}">
+{% endblock %}
+
+{% block title %}
+    Syllabus
+{% endblock %}
+
+
+{% block content %}
+<div class="syllabus_details">
+    </div>
+    <div class="course_title">
+        <h1>Course Information and Schedule</h1>
+    </div>
+    <!--class info and professor info-->
+    <div class="class_information">
+            <p>Lecture:  Mondays 9:00 am - 11:00 am in HL 001</p>
+            <p>Lecture:  Mondays 9:15 am - 11:00 am in HW 216</p>
+    </div>
+    <div class="professor1_information">
+            <h3>Instructor: Anna Bretscher</h3>
+            <p>Email: bretscher@utsc.toronto.edu</p>
+            <P>Phone: (416) 208-4745</p>
+            <p>Office: IC493</P>
+    </div>
+    <div class="professor2_information">
+            <h3>Instructor: Abbas Attarwala</h3>
+            <p>Email: abbas.attarwala@utoronto.ca</p>
+            <P>Phone: (416) 208-4745</p>
+            <p>Office: IC493</P>
+    </div>
+    <div class="moreINFOabbas">
+        <p><a href="{{ url_for('static', filename='B20Winter2019CourseSyllabus.pdf') }}">Check for more detailed information about Abbas</a></p>
+
+    </div>
+    
+    <div class="moreINFOanna">
+        <p><a href="{{ url_for('static', filename='syllabus.pdf') }}">Check for more detailed information about Anna</a></p>
+    </div>
+{% endblock content %}

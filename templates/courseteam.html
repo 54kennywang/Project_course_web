@@ -1,0 +1,75 @@
+
+{% extends "base.html" %}
+{% block cssfile %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='courseteam.css') }}">
+{% endblock %}
+
+{% block title %}
+    Course Team
+{% endblock %}
+
+{% block content %}
+<div class="all-cards">
+    <div class="card">
+
+      <img src="{{ url_for('static', filename='Anna_Bretscher.jpg') }}" alt="Avatar">
+      <div class="info">
+        <p><b>Instructor: Dr. Anna Bretscher</b></p>
+        <p>Associate Professor</p> 
+        <p><A HREF=“mailto: 123456@abc.com”>Email: 123456@abc.com</p> 
+        <p><a href="#">Personal Website</a></p> 
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="{{ url_for('static', filename='1891764-007squirtle.png') }}" alt="Avatar">
+      <div class="info">
+        <p><b>TA: Chris</b></p>
+        <p>Software Engineering 3rd</p> 
+        <p><A HREF=“mailto: 123456@abc.com”>Email: 123456@abc.com</p> 
+        <p><a href="#">Personal Website</a></p> 
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="{{ url_for('static', filename='Pikachu_%28anime%29.png') }}" alt="Avatar">
+      <div class="info">
+        <p><b>TA: Kenny</b></p>
+        <p>Software Engineering 3rd</p> 
+        <p><A HREF=“mailto: 123456@abc.com”>Email: 123456@abc.com</p> 
+        <p><a href="#">Personal Website</a></p> 
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="{{ url_for('static', filename='Pokemon Gengar wikia.png') }}" alt="Avatar">
+      <div class="info">
+        <p><b>TA: Michael</b></p>
+        <p>Software Engineering 3rd</p> 
+        <p><A HREF=“mailto: 123456@abc.com”>Email: 123456@abc.com</p> 
+        <p><a href="#">Personal Website</a></p> 
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="{{ url_for('static', filename='052Meowth_DP_anime.png') }}" alt="Avatar">
+      <div class="info">
+        <p><b>TA: Racheal</b></p>
+        <p>Software Engineering 3rd</p> 
+        <p><A HREF=“mailto: 123456@abc.com”>Email: 123456@abc.com</p> 
+        <p><a href="#">Personal Website</a></p> 
+      </div>
+    </div>
+    
+    <div class="card">
+      <img src="{{ url_for('static', filename='poks17_fennekin_174x252.png') }}" alt="Avatar">
+      <div class="info">
+        <p><b>TA: Seline</b></p>
+        <p>Software Engineering 3rd</p> 
+        <p><A HREF=“mailto: 123456@abc.com”>Email: 123456@abc.com</p> 
+        <p><a href="#">Personal Website</a></p> 
+      </div>
+    </div>
+  </div>
+{% endblock content %}

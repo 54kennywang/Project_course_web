@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            test
+        </title>
+<!--         <script>
+            function warn(){
+                alert('fire');
+            }
+        </script>
+ -->        
+    </head>
+    <body>
+        <div onload="hide('#haha')">
+            <p id="haha">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+        <form action="#" method="post" id="myForm">
+
+          Title:
+          <input id="titlenewtide" type="text" name="title" required>
+          <br>Description:
+          <textarea name="description" id="description"></textarea>
+          <br>Tag:
+          <input id="newtag" type="text" name="newtag" required>
+          <br>Category:
+          <input type="radio" name="category" value="19" required>Animation
+          <button type="submit" value="Submit" name="subnewtide" id="subnewtide" disabled="disabled">Submit</button>
+
+        </form>
+        <form action="{{ url_for('login') }}" method="POST" id="login_form">
+        <!-- <form method="post"> -->
+            <p>Enter your username: <input type=text name="username" id="username"></p>
+            <p>Enter your password: <input type=password name="password" id="password">
+            <p>
+                Log in as
+                <input type="radio" name="role" value="student" required=>Student
+                <input type="radio" name="role" value="instructor" required="">Instructor
+            </p>
+            <input type="submit" name="submit" value="submit" id="login_submit" disabled="disabled">
+        </form>
+
+        <script 
+        src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+        <script type="text/javascript" src="test.js"></script>
+    </body>
+</html>

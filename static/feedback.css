@@ -1,0 +1,140 @@
+/*body part!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+body{
+  /*background-color:#eff3f9;*/
+  background-image: url("https://www.akamai.com/us/en/multimedia/images/intro/akamai-tech-talks-improve-off-network-security-intro.jpg?imwidth=1366");
+  /* background-image: url("https://png2.kisspng.com/sh/7a30b0b8e881dd83f278b6171bb98a62/L0KzQYm3VMAzN5Jrj5H0aYP2gLBuTgdmal5pfehubHBzfbb1lL1lcZhujNN1LX3kgrzslPlvb158fdQ2ZHX2ebj1TgNmaaNoReluYj3ndcfsjP9xdZZzjJ8AYXO1dbPphPE3aWppUZCAN0ezQoG8VME2OmM8SqUCN0O5SIOATwBvbz==/kisspng-web-development-digital-marketing-web-design-searc-web-development-5ac2ebbda6a9d9.5770205415227237736827.png"); */
+  /*opacity:0.2;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* color: white; */
+  /* margin-top: 110px; */
+  height: 100%;
+  /* height: 100vh; */
+  
+}
+
+#title{
+  padding-top: 40px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+.content{
+  font-size: 23px;
+  line-height: 30px;
+  margin: 3px;
+  color: white;
+  text-align: center;
+}
+
+.content1{
+  font-size: 19px;
+  line-height: 30px;
+  margin: 3px;
+  color: white;
+  text-align: center;
+}
+
+input[type=text], textarea {
+  width: 100%;
+  padding: 12px; /* Some padding */  
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+#feedback{
+  width: 100%;
+  padding: 12px; /* Some padding */  
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+#sec_feedback{
+  width: 40%;
+  padding: 12px; /* Some padding */  
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+}
+
+#id_box{
+  width: 20%;
+  padding: 12px; /* Some padding */  
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+select{
+  /*width: 40%;*/
+  padding: 12px; /* Some padding */  
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 1px; /* Bottom margin */
+  margin-right: 30px; 
+}
+
+/* Style the submit button with a specific background color etc */
+#submit_but {
+  width: 30%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.options{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete_reply{
+  margin-left: 14px;
+}
+
+
+#feedback{
+  height: 160px;
+}
+a {
+  color: white;
+}
+
+
+.copyright a:visited{
+  color: white;
+
+}

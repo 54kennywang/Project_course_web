@@ -1,0 +1,110 @@
+
+{% extends "base.html" %}
+{% block cssfile %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='feedback.css') }}">
+{% endblock %}
+
+{% block title %}
+    Feedback
+{% endblock %}
+
+{% block content %}
+  <br>
+
+  {% if role %}
+      <p class="content" id="title">Please leave your anonymous feedback.</p>
+        <br>
+      <div class="container">
+        <form action="{{ url_for('feedback') }}" method="POST">
+            <p class="content1">Feedback</p>
+            <textarea id="feedback" name="feedback" placeholder="Please leave you feedback i.e. What do you like about the instructor teaching? What do you recommend the instructor to do to improve their teaching? What do you like about the labs? What do you recommend the lab instructors to do to improve their lab teaching?
+            "></textarea>
+            <p class="content">Who would you like to send feedback to:</p>
+            
+
+            <div class="options">
+              <div class="options">
+                <select name="which" id="select">
+                  {% for i in available_instructor %}
+                    <option value="{{ i[1] }}">{{ i[0] }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <input type="submit" value="Submit" id="submit_but" onclick="feedback_success();">              
+            </div>
+        </form>
+      </div>
+      
+
+
+      <p class="content1"><a href="#" class="see_requests" onclick="display('reply_from_prof')"> You have <span id="feedback_num">{{ number }}</span> new replies! Click here to see. </a></p>
+      <div id="reply_from_prof">
+        {% if replied_me %}
+          <form action="{{ url_for('mark_read') }}" method="POST">
+            {% for i in replied_me %}
+              <p class="content1">{{ i[2] }}: {{ i[1] }} (from {{ i[0] }})<input class="delete_reply" type="submit" name="delete_reply" value="delete{{ i[2] }}"></p>
+            {% endfor %}
+          </form>
+        {% endif %}
+        <p class="content1"><a href="#" class="see_requests" onclick="hide('#reply_from_prof')"> Collapse </a></p>
+      </div>
+      
+      <p class="content1"><a href="#" class="see_feedback" onclick="display('feedback_history')"> Click here to see all feedback I provided! </a></p>
+      <div id="feedback_history">
+        {% if my_feedback %}
+          {% for i in my_feedback %}
+            <p class="content1">To {{ i[0] }}: {{ i[1] }}</p>
+          {% endfor %}
+        {% endif %}
+        <p class="content1"><a href="#" class="see_requests" onclick="hide('#feedback_history')"> Collapse </a></p>
+      </div>
+
+  {% else %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <p class="content">Please use following options.</p>
+    {% if num == 0 %}
+      <p>You have no new feedback from students. </p>
+    {% else %}
+      <br>
+      <br>
+      <p class="content1"><a href="#" class="see_requests" onclick="display('my_new_feedback')"> You have <span id="feedback_num">{{ num }}</span> new feedback! Click here to see. </a></p>
+      <div id="my_new_feedback">
+        <form action="{{ url_for('mark_read') }}" method="POST">
+          {% for i in new_feedback %}
+            <p class="content1">{{ i[4] }}: {{ i[2] }}           <input type="submit" name="delete_feedback" value="delete{{ i[4] }}"></p>
+          {% endfor %}
+        </form>
+        <p class="content1"><a href="#" class="see_requests" onclick="hide('#my_new_feedback')"> Collapse </a></p>
+      </div>
+
+      <p class="content1"><a href="#" class="see_requests" onclick="display('all_feedback')"> Click here to see all feedbacks. </a></p>
+      <div id="all_feedback">
+        {% for i in range(0, num_all): %}
+          <p class="content1">{{ i+1 }}: {{ all_feedback[i][2] }}</p>
+        {% endfor %}
+        <p class="content1"><a href="#" class="see_requests" onclick="hide('#all_feedback')"> Collapse </a></p>
+      </div>
+
+      <p class="content1"><a href="#" class="see_requests" onclick="display('feedback_reply')"> You have the option to reply a feedback. Click here.</a></p>
+
+      <div class="container" id="feedback_reply">
+        <form action="{{ url_for('feedback') }}" method="POST" class="box">
+
+            <textarea id="sec_feedback" name="reply" placeholder="Please reply your feedback"></textarea>  
+
+          
+            <br>
+            <textarea name="identifier" placeholder="Feedback ID" id="id_box"></textarea>
+
+            <input id="submit_but" type="submit" value="Submit" onclick="reply_success();">
+        </form>
+        <p class="content1"><a href="#" class="see_requests" onclick="hide('#feedback_reply')"> Collapse </a></p>
+      </div>
+    {% endif %}
+  {% endif %}
+
+  
+{% endblock content %}

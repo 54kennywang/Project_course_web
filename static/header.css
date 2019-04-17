@@ -1,0 +1,227 @@
+   /* header !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+   .header {
+    background-color:#041126;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    top:0;
+    left: 0;
+    font-weight: bolder;
+
+  }
+  
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color:#041126;
+  }
+  
+  .header li a {
+    font-size: 23px;
+    display: block;
+    padding-right: 15px; /* this will add padding to the right only */
+    color:white;
+    /*border-right: 1px solid #f4f4f4;*/
+    text-decoration: none;
+    text-align: center;
+    /*width: auto;*/
+  }
+  
+  .header li a:hover,
+  .header .menu-btn:hover {
+    /*background-color: #f4f4f4;*/
+    text-decoration: underline;
+  }
+  
+  .header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    /*padding: 10px 20px;*/
+    text-decoration: none;
+  }
+  
+  .header .logo img{
+    padding: 0;
+    margin: 0;
+    height:50px;
+    width: 150px;
+    background: white;
+  }
+  
+  /* menu */
+  
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+  
+  /* menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+  
+  .header .menu-icon .navicon {
+    background: white;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+    max-height: 600px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  
+
+#feedback_num{
+  color:red;
+}
+
+#logout{
+  color:red;
+}
+  /* 48em = 768px */
+  
+  @media (min-width: 75em) {
+    .header li {
+      float: left;
+    }
+    .header li a {
+      padding-top: 20px;
+      padding-right: 20px;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
+    }
+  }
+  body{
+    font-family: sans-serif;
+  }
+  footer p {
+    color: white;
+  }
+  a {
+    color: white;
+  }
+  .uoftfooterlink:hover{
+    color: blue;
+  }
+
+body::after {
+  content: '';
+  display: block;
+  height: 50px; /* Set same as footer's height */
+}
+
+  .footerdeco{
+
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin:0px;
+    bottom: 0;
+
+    /*fading effect*/
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -ms-animation: fadein 2s;
+    -o-animation: fadein 2s;
+    animation: fadein 2s;
+  }
+  @keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  /*fading effect on firefox*/
+  @-moz-keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  /*fading effect on Safari*/
+  @-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  /*fading effect on Internet Explorer*/
+  @-ms-keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .image-blured-edge:hover{
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+    /* display: block;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 8px 20px white inset; */
+  }
+
+  .copyright{
+    text-align: center;
+    margin: 0%;
+  }

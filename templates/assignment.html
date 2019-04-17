@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block cssfile %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assignment.css') }}">
+{% endblock %}
+
+{% block title %}
+    Assignment
+{% endblock %}
+
+{% block content %}
+    <p class="content" id="intro">Here are the assignment and exercise topics, weights, and due dates. I will be posting the exercise and assignment handouts here. All exercises and assignments will be submitted on MarkUs.</p>
+            <!-- <h2>General Information:</h2> -->
+            
+    <div id="A1">
+        <p class="content assignment-title">A1 (15%)</p>
+        <hr>
+        <p class="content assignment-topic">Topic: Relational Algebra and MySQL</p>
+        <p class="content assignment-date">Due Date: Part 1. Wednesday Feb. 1, 11.59pm; Part 2 and 3. For 5% bonus Saturday Feb. 11, 11.59pm or Friday Feb. 17, 11.59.</p>
+        <p class="content assignment-link"><a href="{{ url_for('static', filename='dummy.pdf') }}">Download Assignment Here</a></p>
+        <p class="content assignment-solution"><a href="{{ url_for('static', filename='dummy.pdf') }}">Download Solution Here</a></p>
+        <br>
+    </div>
+
+    <div id="A2">
+        <p class="content assignment-title">A2 (15%)</p>
+        <hr>
+        <p class="content assignment-topic">Topic: HTML, CSS, PHP</p>
+        <p class="content assignment-date">Due Date: Part 1: Friday March. 10, 11.59pm; Part 2: Friday March. 19, 11.59pm.</p>
+        <p class="content assignment-link"><a href="{{ url_for('static', filename='dummy.pdf') }}">Download Assignment Here</a></p>
+        <p class="content assignment-solution"><a href="{{ url_for('static', filename='dummy.pdf') }}">Download Solution Here</a></p>
+        <br>
+    </div>
+
+    <div id="A3">
+        <p class="content assignment-title">A3 (15%)</p>
+        <hr>
+        <p class="content assignment-topic">Topic: Relational Algebra and MySQL</p>
+        <p class="content assignment-date">Due Date: Friday March 31, 11.59pm</p>
+        <p class="content assignment-link"><a href="{{ url_for('static', filename='dummy.pdf') }}">Download Assignment Here</a></p>
+        <p class="content assignment-solution"><a href="{{ url_for('static', filename='dummy.pdf') }}">Download Solution Here</a></p>
+        <br>
+    </div>
+{% endblock content %}

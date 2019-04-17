@@ -1,0 +1,132 @@
+/* c.nav{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    background-color: white; 
+}
+
+#logo{
+    width: 100px;
+    height:70px;
+}
+
+.nav li{
+    list-style: none;
+    margin: 0 10px;
+}
+
+.menu{
+    display: flex;
+
+}
+.para{
+    position: relative;
+}*/
+.nav img{
+    height: 80px;
+    width: auto;
+
+}
+/* .nav ul li{
+    display: flex;
+    flex-direction: row;
+}
+.menuOptions{
+    display: flex;
+    flex-direction: row;
+} */
+.nav a {
+    margin-left: 2%;
+    width: 18%;
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: aqua;
+    justify-content: flex-start;
+    width: 100%;
+    /* background-color: yellow; */
+}
+  
+.logo{
+    float: left;
+}
+.menu_btn{
+    display: flex;
+    justify-content: flex-end;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-evenly;
+    list-style: none;
+}
+.menuOptions{
+
+    margin-left: 5px;
+
+}
+@media(max-width: 1306px){
+    menu{
+        float: none;
+        display: flex;
+        justify-content: space-around;
+    }
+    .menu li{
+        display: none;
+    }
+
+}
+.feedbackBlock{
+}
+body{
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    /* background-image: url("https://png2.kisspng.com/sh/7a30b0b8e881dd83f278b6171bb98a62/L0KzQYm3VMAzN5Jrj5H0aYP2gLBuTgdmal5pfehubHBzfbb1lL1lcZhujNN1LX3kgrzslPlvb158fdQ2ZHX2ebj1TgNmaaNoReluYj3ndcfsjP9xdZZzjJ8AYXO1dbPphPE3aWppUZCAN0ezQoG8VME2OmM8SqUCN0O5SIOATwBvbz==/kisspng-web-development-digital-marketing-web-design-searc-web-development-5ac2ebbda6a9d9.5770205415227237736827.png"); */
+    /* background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAk1BMVEX////13hkAAAD13QD56oj57I385RrbxxZ7bwz44Rn44BnOuhX75Br/5xr03RnWwhbs1hiomBGunhJuZAt1agy9qxMsJwTizReBdQ2WiA/DsRSFeQ3ItRReVQlVTQmhkhBGQAcYFgLSvhU/OQb787oiHwOdjhAfHAMVEwEwLAWPgg4oJAQPDgI2MQW1pRLo0hhmXAqFIo+cAAAEIklEQVR4nO2dW5PiKhRGJ0wPEYQYrzGaaN+mZ/r0jOn//+tOktZkQ9CXU2VBzrfeNGixhLBhQ8pv3wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO7B68O9eb2z4cP3e/Nwd8Povnz/AUMYwhCGMIQhDGEIQxjCEIYwhCEMYQhDGMIQhjCEIQxhCEMYwhCGMIQhDGEIQxjCEIYwhCEMYQhDGAZmKDqk66riWivNuRKhGqbTjthWlDyZHlfl4XAoJ/Op5MOfIABDGbOOFTcv6Xjy1F9lT5NM246BGU4MQ1Utmc0yVeMx5Os/A0HGfhdmOwdsqOcOv4a10YrhGqr1FUHGCqoYrKHMrgoyVpHhJlhD9XnD8EAaMVRDObshyNiiD/6hGvIJFXpfbj835HVOPh6qoSY+m109ZdO8eLn00ViHb2iMM9XXXSeSsn05l8b8NFBDQUJF3t2bSd1TD9U45jRi0b837ZpMzNhpLPNSajjrO6WwJ6XjMDw5l4XBG5L7sNQ3Px6ooRHw5/zWxwM1NOIh2yfD2y98w5Iqfiz0VcdQDcWJGfw5po4cTciGUbJhFtuZM9kWrKE62Yb1qFrooWOwhpFaDRXZY8Ftx3ANo+TFocgOMyt2BGwok0eXIstHsbY4Kw7TpW1XzUaRiWrRC6cim40gT3NGVRO3Yvh5mu6imrnG1E3ahf/QDZvNtWw7VFx1/TR8w2aHLZq/X+2nYzCsUXJ9MA2Xl1XjSAybfeLCDI+XC6MxbG7IIzXcidEZ1uFxRwyPagSGgwWhJtHxsiHuqaEklb++B5xVlqMg6ZvSa0OVkUMXNOu076djKspZaeUuZNUXPWh/DUXyxh77utOERX55W6h1s8g/mplEalh6ayh18beu4KLrj3zfV/uS/dXxOfytDUVFZuJLX3upSs9LorhrRXJiphBfjdzP0+hGhaBFPR1Lhexi2q9Y1+ONFJzOrNuhRRhnFFYVbw+D1SUzuur3Mx7KZ1rHfFal2Y4mRl/aPmnvcE92cZqk2dRcSF2+0y9DUZh1f/ppvn776nlqzyx+vm+s00Pd+TC/DCPtzktcSM/F3Ekogy7ceGYYpbdqve8y3pnrvBdl6+36UO2u1/qpX7ir59uCf9PuG30zNEKaRUGyhOr2eZrM5zzNtfwZOxmzbpGWV8ox9lGR38I/w4g/DzZd2PBQZSTV8ZdbcJLQlLCHhu281GZrHyKJmunP2++hXzk1S/poWNc9WdCUxEdeKefmoJKFGebf89jeYvPTsG5HnRSLfLtc7efrTLv92nJcV7v5fvW5XP2z2KWOkr4aNpUXSnGulPMRBIJsyzUPIwT7NMJ/A4YwhCEMR2k49v+3eH34cV/u/h8lAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4v/Ivyo1tNhQVwlsAAAAASUVORK5CYII="); */
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+form{
+    width:500px;
+
+}
+input{
+    width:100%;
+}
+button{
+    width:100%;
+}
+textarea{
+    width:100%;
+    resize:vertical;
+    max-height: 500px;
+
+}
+input[type=text], textarea, button{
+    outline:none; 
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+input:focus, textarea:focus{
+    box-shadow:0 0 7px rgba(225, 0, 0, 0.5);
+    border:1px solid #ddd;
+}
+
+button[type=submit]{
+    background-color: green;
+    cursor: pointer;
+}
+.container{
+    clear: both;
+    display: flex;
+    align-content: center;
+
+
+}

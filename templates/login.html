@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='header.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+    <div class="container">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  {% for message in messages %}
+                    <div class="alert_msg" style="color: red">
+                      {{ message }}
+                    </div>
+                  {% endfor %}
+                {% endif %}
+            {% endwith %}
+        <h1>CSCB20: Introduction to Databases and Web Applications</h1>
+        <form action="{{ url_for('login') }}" method="POST" id="login_form">
+            <p>Enter your username: <input type=text name="username"></p>
+            <p>Enter your password: <input type=password name="password">
+            <p>
+                Log in as
+                <input type="radio" name="role" value="student" required=>Student
+                <input type="radio" name="role" value="instructor" required="">Instructor
+            </p>
+            <input type="submit" name="submit" value="submit" id="login_submit" disabled="disabled">
+        </form>
+        <br>
+        <p>Don't have an account yet? <a href="{{ url_for('register') }}"> Click here to sign up!</a></p>
+    </div>
+    
+    <footer class="footerdeco" id="footers">
+        <div class="image-blurred-edge">
+            <div class="copyright">
+                <p><a href="https://www.utsc.utoronto.ca/cms/computer-science-1" target = "_blank" class="uoftfooterlink">Faculty of Computer Science at UofT</a></p>
+                <p>Copyright &copy; Designed by Seongjin Hong and Qibo Wang </p>
+            </div>
+        </div>       
+    </footer>  
+    <script 
+        src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='functions.js') }}"></script>
+</body>
+</html>

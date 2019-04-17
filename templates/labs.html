@@ -1,0 +1,45 @@
+
+{% extends "base.html" %}
+{% block cssfile %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='labs.css') }}">
+{% endblock %}
+
+{% block title %}
+    Labs
+{% endblock %}
+
+{% block content %}
+    <p class="content" id="intro">Here are the lab and exercise topics, weights, and due dates. I will be posting the exercise and lab handouts here. 
+                All exercises and labs will be submitted on MarkUs.</p>
+            <p class="content" id="intro">Each lab worth 5%</p>
+            <!-- <h2>General Information:</h2> -->
+            <div id="Lab1">
+                <p class="content lab-title">Lab1</p>
+                <hr>
+                <p class="content lab-topic">Topic: Relational Algebra and MySQL</p>
+                <p class="content lab-date">Due Date: Part 1. Tuesday April 2, 11.59am; Part 2 and 3. For 5% bonus Saturday Tuesday April 2, 11.59pm or Wednesday April 3, 12.00am.</p>
+                <p class="content lab-link"><a href="{{ url_for('static', filename='dummy.pdf') }}">Download lab Here</a></p>
+                <p class="content lab-solution"><a href="{{ url_for('static', filename='dummy.pdf') }}">Download Solution Here</a></p>
+                <br>
+            </div>
+
+            <div id="Lab2">
+                <p class="content lab-title">Lab2</p>
+                <hr>
+                <p class="content lab-topic">Topic: HTML, CSS, PHP</p>
+                <p class="content lab-date">Due Date: Part 1: Monday April 1, 11.59am; Part 2: Monday April 1, 11.59pm.</p>
+                <p class="content lab-link"><a href="{{ url_for('static', filename='dummy.pdf') }}">Download lab Here</a></p>
+                <p class="content lab-solution"><a href="{{ url_for('static', filename='dummy.pdf') }}">Download Solution Here</a></p>
+                <br>
+            </div>
+
+            <div id="Lab3">
+                <p class="content lab-title">Lab3</p>
+                <hr>
+                <p class="content lab-topic">Topic: Relational Algebra and MySQL</p>
+                <p class="content lab-date">Due Date: Sunday March 31, 11.59pm</p>
+                <p class="content lab-link"><a href="{{ url_for('static', filename='dummy.pdf') }}">Download lab Here</a></p>
+                <p class="content lab-solution"><a href="{{ url_for('static', filename='dummy.pdf') }}">Download Solution Here</a></p>
+                <br>
+            </div>
+{% endblock content %}

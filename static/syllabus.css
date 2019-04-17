@@ -1,0 +1,78 @@
+  /*body part!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+  body{
+    /*background-color:#eff3f9;*/
+    background-image: url("https://www.akamai.com/us/en/multimedia/images/intro/akamai-tech-talks-improve-off-network-security-intro.jpg?imwidth=1366");
+    /*opacity:0.2;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    margin-top: 100px;
+  }
+  
+  #intro{
+    padding: 30px 0;
+  }
+  
+  .content{
+    font-size: 23px;
+    line-height: 30px;
+    margin: 5px;
+  }
+  
+  a {
+    color: white;
+  }
+  
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0% 10%;
+  }
+  .container .syllabus_details{
+    text-align: center;
+  }
+  .container .course_title{
+    text-align: center;
+  }
+  .container .class_information{
+    height: 0.3%;
+    padding: 1%;
+    /*border: 7px solid rgb(0, 255, 234);*/
+    text-align: center;
+    border-radius: 25px;
+    font-size: 20px;
+    margin: 5px;
+  }
+  .professor1_information{
+    height: 0.3%;
+    padding: 1%;
+    /*border: 7px solid rgb(0, 255, 234);*/
+    text-align: center;
+    border-radius: 25px;
+    margin: 5px;
+  }
+  .professor2_information{
+    height: 0.3%;
+    padding: 1%;
+    /*border: 7px solid rgb(0, 255, 234);*/
+    text-align: center;
+    border-radius: 25px;  
+    margin: 5px;
+  }
+
+
+  .moreINFOabbas, .moreINFOanna{
+      font-size: 20px;
+      text-align: center;
+  }
+  .moreINFOanna:hover{
+      font-weight: bold;
+  }
+  .moreINFOabbas:hover{
+    font-weight: bold;
+}
+
+.copyright a:visited{
+  color: white;
+}
